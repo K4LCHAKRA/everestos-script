@@ -11,13 +11,13 @@ rm -rf vendor/xiaomi/sm6150-common
 rm -rf hardware/xiaomi
 
 # Initialize ROM manifest
-repo init -u https://github.com/ProjectEverest/manifest -b 14 --git-lfs
+repo init -u https://github.com/EverestOS-AOSP/manifest -b 15 --git-lfs
 
 # Sync the repo with force to ensure a clean sync
 /opt/crave/resync.sh
 
 # remove frameworks/native
-rm -rf frameworks/native
+# rm -rf frameworks/native
 
 # cloning device tree
 git clone https://github.com/K4LCHAKRA/android_device_xiaomi_mojito.git --depth 1 -b 15 device/xiaomi/mojito
@@ -34,16 +34,16 @@ git clone https://gitlab.com/bliss-mojito/android_vendor_xiaomi_sm6150-common.gi
 git clone https://github.com/ProjectEverest-Devices/android_hardware_xiaomi.git --depth 1 -b mojito hardware/xiaomi
 
 # source patch
-git clone https://github.com/everestos-mojito/frameworks_native.git --depth 1 -b 14 frameworks/native
+# git clone https://github.com/everestos-mojito/frameworks_native.git --depth 1 -b 14 frameworks/native
 
 # signing key for everestos
-git clone https://github.com/mojito-keys/vendor_lineage_signing.git --depth 1 -b main vendor/lineage
+# git clone https://github.com/mojito-keys/vendor_lineage_signing.git --depth 1 -b main vendor/lineage
 
 # Set up the build environment
 . build/envsetup.sh
 
 # Choose the target device
-lunch lineage_mojito-user
+lunch everest_mojito-ap3a-userdebug
 
 # Build the ROM (use mka bacon for a full build)
 mka everest -j$(nproc --all)
