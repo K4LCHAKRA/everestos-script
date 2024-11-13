@@ -20,7 +20,7 @@ repo init -u https://github.com/ProjectEverest/manifest -b 14 --git-lfs
 rm -rf frameworks/native
 
 # cloning device tree
-git clone https://github.com/ProjectEverest-Devices/android_device_xiaomi_mojito.git --depth 1 -b 14 device/xiaomi/mojito
+git clone https://github.com/K4LCHAKRA/android_device_xiaomi_mojito.git --depth 1 -b 15 device/xiaomi/mojito
 git clone https://github.com/ProjectEverest-Devices/android_device_xiaomi_sm6150-common.git --depth 1 -b 14 device/xiaomi/sm6150-common
 
 # cloning kernel tree
