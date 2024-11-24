@@ -37,7 +37,7 @@ git clone https://github.com/ProjectEverest-Devices/android_hardware_xiaomi.git 
 # git clone https://github.com/everestos-mojito/frameworks_native.git --depth 1 -b 14 frameworks/native
 
 # signing key for everestos
-# git clone https://github.com/mojito-keys/vendor_lineage_signing.git --depth 1 -b main vendor/lineage
+git clone https://github.com/mojito-keys/vendor_lineage_signing.git --depth 1 -b main vendor/lineage
 
 # Set up the build environment
 . build/envsetup.sh
