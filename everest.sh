@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Remove the local manifests directory if it exists (cleanup before repo initialization)
-rm -rf .repo/local_manifests/
+# rm -rf .repo/local_manifests/
 
 # remove device tree
 rm -rf device/xiaomi/mojito
@@ -14,7 +14,8 @@ rm -rf hardware/xiaomi
 repo init -u https://github.com/EverestOS-AOSP/manifest -b 15 --git-lfs
 
 # Sync the repo with force to ensure a clean sync
-/opt/crave/resync.sh
+repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
+#/opt/crave/resync.sh
 
 # remove frameworks/native
 # rm -rf frameworks/native
@@ -41,6 +42,9 @@ git clone https://github.com/mojito-keys/vendor_lineage_signing.git --depth 1 -b
 
 # Set up the build environment
 . build/envsetup.sh
+
+# out dir for pc
+export OUT_DIR=/media/dpenra/romout/everestout
 
 # Choose the target device
 lunch everest_mojito-ap3a-userdebug
